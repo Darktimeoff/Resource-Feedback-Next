@@ -7,7 +7,7 @@
     "debug": "NODE_OPTIONS='--inspect=9229' next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint",
+    "lint": "eslint --fix --ext .js,.jsx,.ts,.tsx .",
     "stylelint": "stylelint \"**/*.(css|scss|sass)\" --fix"
   },
   "dependencies": {
