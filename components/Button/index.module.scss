@@ -34,8 +34,9 @@
 	background-color: var(--white);
 
 	&:hover {
-		background-color: var(--primary-hover);
 		color: var(--white);
+		background-color: var(--primary-hover);
+
 		svg {
 			fill: var(--white);
 		}
@@ -44,7 +45,9 @@
 
 .arrow {
 	display: inline-flex;
+
 	margin-left: 10px;
+
 	transition: var(--animation-duration);
 }
 

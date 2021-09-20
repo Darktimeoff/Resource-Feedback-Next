@@ -17,7 +17,7 @@ export const Button = ({appearance = 'primary', arrow, children, className, ...p
 		>
 			{children}
 			{arrow && <span className={arrowCls}>
-				<ArrowIcon fill="#3B434E" />
+				<ArrowIcon />
 			</span>}
 		</button>
 	);
