@@ -20,6 +20,10 @@
 	border: 1px solid var(--white);
 	background-color: var(--primary);
 
+	svg {
+		fill: var(--white);
+	}
+
 	&:hover {
 		background-color: var(--primary-hover);
 	}
@@ -30,6 +34,24 @@
 	background-color: var(--white);
 
 	&:hover {
-		background-color: var(--white-hover);
+		background-color: var(--primary-hover);
+		color: var(--white);
+		svg {
+			fill: var(--white);
+		}
 	}
+}
+
+.arrow {
+	display: inline-flex;
+	margin-left: 10px;
+	transition: var(--animation-duration);
+}
+
+.down {
+	transform: rotate(90deg);
+}
+
+.right {
+	transform: rotate(0);
 }
