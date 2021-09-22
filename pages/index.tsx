@@ -1,10 +1,12 @@
-import { Tag } from '../components';
+import React, { useState} from 'react';
+import { Rating } from '../components';
 
-export default function Home(): JSX.Element {
+export default function Home(): JSX.Element { 
+  const [rating, setRating] = useState(0);
+
   return (
     <>
-     <Tag size="s" color="primary">Aasdasdasd</Tag>
-     <Tag size="m">Bvsddfsdfsdfsdfsdfsdfsdf</Tag>
+      <Rating rating={rating} isEditable setRating={setRating}/>
     </>
   );
 }
