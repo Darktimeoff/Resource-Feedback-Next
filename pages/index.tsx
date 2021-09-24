@@ -1,13 +1,16 @@
 import React, { useState} from 'react';
 import { Rating } from '../components';
-import { MainLayout } from '../layout/main';
+import { withLayout } from '../hoc';
 
-export default function Home(): JSX.Element { 
+function Home(): JSX.Element { 
   const [rating, setRating] = useState(0);
 
   return (
-    <MainLayout>
+    <>
       <Rating rating={rating} isEditable setRating={setRating}/>
-    </MainLayout>
+    </>
   );
 }
+
+
+export default withLayout(Home);

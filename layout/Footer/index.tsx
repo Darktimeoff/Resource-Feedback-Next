@@ -4,6 +4,6 @@ import cn from 'classnames';
 
 export const Footer = (props: FooterProps): JSX.Element => {
 	return (
-		<footer {...props}></footer>
+		<footer {...props}>Footer</footer>
 	)
 };
