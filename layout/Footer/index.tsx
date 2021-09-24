@@ -1,18 +1,9 @@
-import { LayoutProps } from './props';
+import { FooterProps } from './props';
 import styles from './index.module.scss';
 import cn from 'classnames';
 
-export const MainLayout = ({ children }: LayoutProps): JSX.Element => {
+export const Footer = (props: FooterProps): JSX.Element => {
 	return (
-		<>
-			<Header />
-			<main>
-				<Sidebar />
-				<section>
-					{children}
-				</section>
-			</main>
-			<Footer />
-		</>
+		<footer {...props}></footer>
 	)
 };

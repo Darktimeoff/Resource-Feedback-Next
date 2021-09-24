@@ -1,18 +1,11 @@
-import { LayoutProps } from './props';
+import { SidebarProps } from './props';
 import styles from './index.module.scss';
 import cn from 'classnames';
 
-export const MainLayout = ({ children }: LayoutProps): JSX.Element => {
+export const Sidebar = (props: SidebarProps): JSX.Element => {
 	return (
-		<>
-			<Header />
-			<main>
-				<Sidebar />
-				<section>
-					{children}
-				</section>
-			</main>
-			<Footer />
-		</>
+		<aside {...props}>
+			Sidebar
+		</aside>
 	)
 };

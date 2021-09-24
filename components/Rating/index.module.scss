@@ -1,13 +1,16 @@
 .star {
+	box-sizing: content-box;
 	width: 20px;
 	height: 20px;
-	box-sizing: content-box;
 	padding-right: 5px;
 }
+
 .editable {
 	cursor: pointer;
 }
+
 .filled {
 	fill: var(--primary);
+
 	transition: var(--animation-duration);
 }
