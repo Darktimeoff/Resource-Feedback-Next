@@ -2,9 +2,8 @@ import { GetStaticProps} from 'next';
 
 import React from 'react';
 import { withLayout } from '../hoc';
-import axios from 'axios';
-import { IMenuItem } from '../@types/menu.type';
 import { API } from '../api';
+import { HomeProps, IMenuItem } from '../@types';
 
 function Home({menu}: HomeProps): JSX.Element { 
   return (
@@ -21,17 +20,12 @@ export default withLayout(Home);
 
 export const getStaticProps: GetStaticProps<HomeProps> = async () => {
   const firstCategory = 0;
-  const data = await API.findPage(firstCategory);
+  const menu = await API.findPage(firstCategory);
 
   return {
     props: {
-      menu: data,
-      category: firstCategory,
+      menu,
+      firstCategory,
     }
   };
 };
-
-interface HomeProps extends Record<string, unknown>{
-  menu: IMenuItem[];
-  category: number;
-}

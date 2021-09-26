@@ -1,5 +1,7 @@
+import { TopLelelCategory } from '.';
+
 interface Id {
-	secondCategory: 0 | 1 | 2 | 3;
+	secondCategory: TopLelelCategory;
 }
 
 export interface IPageItem {
