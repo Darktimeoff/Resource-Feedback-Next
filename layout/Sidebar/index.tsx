@@ -7,5 +7,5 @@ export const Sidebar = (props: SidebarProps): JSX.Element => {
 		<aside {...props}>
 			Sidebar
 		</aside>
-	)
+	);
 };

@@ -1,3 +1,5 @@
+$breakMobile: 765px;
+
 :root {
 	--animation-duration: 0.3s;
 	--black: #3B434E;
@@ -10,4 +12,6 @@
 	--green: #1DC37E;
 	--green-light: #C8F8ED;
 	--font-family: 'Noto Sans KR', sans-serif;
+	--container-size: 1200px;
+	--break-mobile: 765px;
 }

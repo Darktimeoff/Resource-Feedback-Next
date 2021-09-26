@@ -7,5 +7,5 @@ export const Header = (props: HeaderProps): JSX.Element => {
 		<header {...props}>
 			Header
 		</header>
-	)
+	);
 };
