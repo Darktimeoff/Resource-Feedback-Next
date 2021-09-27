@@ -63,14 +63,14 @@ function createSecondLevelMenu(menuData: IMenuItem[], route: string, setMenu?: S
 	const openThirdMenu = (m: IMenuItem) => undefined;
 
 	return (
-		<div>
+		<div className={styles.secondLevelWrapper}>
 			{menuData.map(m => {
 				const secondLevelBlockCls = cn(styles.secondLevelBlock, { [styles.secondLevelBlockOpened]: m.isOpened });
 				const thirdLevelBlockJSX = m.isOpened && createThirdLevelMenu(m.pages, route);
 
 				return (
 					<div key={m._id.secondCategory} onClick={() => openThirdMenu(m)}>
-						<div className={styles.secondLevelMenu}>{m._id.secondCategory}</div>
+						<div className={styles.secondLevelItem}>{m._id.secondCategory}</div>
 						<div className={secondLevelBlockCls}>
 							{thirdLevelBlockJSX}
 						</div>
@@ -82,11 +82,11 @@ function createSecondLevelMenu(menuData: IMenuItem[], route: string, setMenu?: S
 }
 
 function createThirdLevelMenu(pages: IPageItem[], route: string): JSX.Element {
-	const itemCls = cn(styles.thirdLeveMenu, { [styles.thirdLevelMenuActive]: true });
+	const itemCls = cn(styles.thirdLevelItem, { [styles.thirdLevelMenuActive]: false });
 	return (
 		<>
 			{pages.map(p => {
-				const link = `${route}/${p.alias}`;
+				const link = `${route}/${p.alias}/`;
 				return (
 					<Link href={link} key={link}><a className={itemCls}>{p.category}</a></Link>
 				);

@@ -5,16 +5,54 @@
 	align-items: center;
 	font-weight: 500;
 	font-size: 18px;
-	color: #787D85;
+	color:  var(--gray-dark);
 	line-height: 25px;
+	margin-top: 20px;
 	svg {
-		color: #787D85;
+		fill: var(--gray-dark);
 	}
 }
 
-.firstLevelItemActive {
+.firstLevelItemActive, .firstLevelItem:hover {
 	color: var(--primary);
 	svg {
-		color: var(--primary);
+		fill: var(--primary);
 	}
+}
+
+.secondLevelWrapper {
+	margin-top: 14px;
+	margin-bottom: 14px;
+	margin-left: 12px;
+	padding-left: 32px;
+	padding-top: 8px;
+	padding-bottom: 8px;
+	border-left: 1px solid #DFDFDF;
+}
+
+.secondLevelItem {
+	margin-bottom: 10px;
+
+	cursor: pointer;
+	text-transform: uppercase;
+
+	color: var(--gray-dark);
+	font-size: 12px;
+	line-height: 16px;
+	font-weight: 300;
+}
+.secondLevelBlockOpened {
+	margin-bottom: 20px;
+}
+.thirdLevelItem {
+	display: block;
+	font-weight: 500;
+	font-size: 14px;
+	line-height: 19px;
+	color:  var(--gray-dark);
+	margin-bottom: 10px;
+}
+
+.thirdLevelMenuActive, .thirdLevelItem:hover {
+	color: var(--primary);
 }
