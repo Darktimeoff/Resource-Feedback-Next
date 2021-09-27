@@ -3,14 +3,12 @@ import { GetStaticProps} from 'next';
 import React from 'react';
 import { withLayout } from '../hoc';
 import { API } from '../api';
-import { HomeProps, IMenuItem } from '../@types';
+import { HomeProps } from '../@types';
 
-function Home({menu}: HomeProps): JSX.Element { 
+function Home(props: HomeProps): JSX.Element { 
   return (
     <>
-      <ul>
-        {menu.map(m => (<li key={m._id.secondCategory}>{m._id.secondCategory}</li>))}
-      </ul>
+     <div>Index tsx</div>
     </>
   );
 }
