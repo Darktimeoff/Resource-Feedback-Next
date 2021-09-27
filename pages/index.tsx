@@ -1,14 +1,14 @@
-import { GetStaticProps} from 'next';
+import { GetStaticProps } from 'next';
 
 import React from 'react';
 import { withLayout } from '../hoc';
 import { API } from '../api';
-import { HomeProps } from '../@types';
+import { HomeProps, TopLevelCategory } from '../@types';
 
-function Home(props: HomeProps): JSX.Element { 
+function Home(props: HomeProps): JSX.Element {
   return (
     <>
-     <div>Index tsx</div>
+      <div>Index tsx</div>
     </>
   );
 }
@@ -17,7 +17,7 @@ function Home(props: HomeProps): JSX.Element {
 export default withLayout(Home);
 
 export const getStaticProps: GetStaticProps<HomeProps> = async () => {
-  const firstCategory = 0;
+  const firstCategory = TopLevelCategory.Courses;
   const menu = await API.findPage(firstCategory);
 
   return {

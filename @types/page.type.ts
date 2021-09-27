@@ -1,4 +1,4 @@
-export enum TopLelelCategory {
+export enum TopLevelCategory {
 	Courses,
 	Services,
 	Books,
@@ -31,7 +31,7 @@ export interface ITopPageModel {
 	tagsTitle: string
 	metaTitle: string;
 	metaDescription: string;
-	firstCategory: TopLelelCategory;
+	firstCategory: TopLevelCategory;
 	advantages: IAdvantage[];
 	createdAt: Date;
 	updatedAt: Date;

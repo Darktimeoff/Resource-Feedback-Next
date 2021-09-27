@@ -1,8 +1,8 @@
 import axios from 'axios';
-import { IMenuItem, IProductModel, ITopPageModel } from '../@types';
+import { IMenuItem, IProductModel, ITopPageModel, TopLevelCategory } from '../@types';
 
 export class API {
-	static async findPage(category: number): Promise<IMenuItem[]> {
+	static async findPage(category: TopLevelCategory): Promise<IMenuItem[]> {
 		const { data } = await axios.post<IMenuItem[]>(`https://${process.env.NEXT_PUBLIC_DOMAIN}/api/top-page/find`, {
 			firstCategory: category,
 		});

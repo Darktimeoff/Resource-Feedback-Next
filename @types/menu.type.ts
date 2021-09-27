@@ -1,7 +1,7 @@
-import { TopLelelCategory } from '.';
+import { TopLevelCategory } from '.';
 
 interface Id {
-	secondCategory: TopLelelCategory;
+	secondCategory: TopLevelCategory;
 }
 
 export interface IPageItem {
@@ -13,5 +13,13 @@ export interface IPageItem {
 
 export interface IMenuItem {
 	_id: Id,
+	isOpened?: boolean;
 	pages: IPageItem[],
+}
+
+export interface IFirstLevelMenuItem {
+	route: string;
+	name: string;
+	icon: JSX.Element;
+	id: TopLevelCategory;
 }

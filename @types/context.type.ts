@@ -1,7 +1,8 @@
-import { IMenuItem, TopLelelCategory } from '.';
+import { IMenuItem, TopLevelCategory } from '.';
 
+export type SetMenu = (newMenu: IMenuItem[] | IMenuItem) => void;
 export interface IMenuContext {
 	menu: IMenuItem[];
-	firstCategory: TopLelelCategory,
-	setMenu?: (newMenu: IMenuItem[]) => void;
+	firstCategory: TopLevelCategory,
+	setMenu?: SetMenu
 }

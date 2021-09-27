@@ -1,0 +1,20 @@
+.firstLevelItem {
+	display: grid;
+	grid-template-columns: 24px 1fr;
+	gap: 20px;
+	align-items: center;
+	font-weight: 500;
+	font-size: 18px;
+	color: #787D85;
+	line-height: 25px;
+	svg {
+		color: #787D85;
+	}
+}
+
+.firstLevelItemActive {
+	color: var(--primary);
+	svg {
+		color: var(--primary);
+	}
+}
