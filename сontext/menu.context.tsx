@@ -5,8 +5,7 @@ export const MenuContext = createContext<IMenuContext>({ menu: [], firstCategory
 
 export const MenuContextProvider = ({ menu, firstCategory, children }: PropsWithChildren<IMenuContext>): JSX.Element => {
 	const [menuState, setMenuState] = useState<IMenuItem[]>(menu);
-	const setMenu: SetMenu = (newMenu) => setMenuState(p => Array.isArray(newMenu) ? [...newMenu] : [...p, {...newMenu}]);
-
+	const setMenu: SetMenu = (newMenu) => setMenuState(newMenu);
 
 	return <MenuContext.Provider value={{ 'menu': menuState, firstCategory, setMenu }}>{children}</MenuContext.Provider>;
 };

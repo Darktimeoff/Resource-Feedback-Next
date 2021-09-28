@@ -41,8 +41,14 @@
 	line-height: 16px;
 	font-weight: 300;
 }
+.secondLevelBlock {
+	display: none;
+}
 .secondLevelBlockOpened {
-	margin-bottom: 20px;
+	display: block;
+	&:last-child {
+		margin-bottom: 20px;
+	}
 }
 .thirdLevelItem {
 	display: block;
