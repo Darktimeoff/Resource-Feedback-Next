@@ -3,20 +3,10 @@ import { useContext } from 'react';
 import { MenuContext } from '../../сontext/menu.context';
 import styles from './index.module.scss';
 import cn from 'classnames';
-import { IFirstLevelMenuItem, IMenuItem, IPageItem, SetMenu, TopLevelCategory } from '../../@types';
-import CoursesIcon from './icons/icon_courses.svg';
-import ServicesIcon from './icons/icon_services.svg';
-import BooksIcon from './icons/icon_books.svg';
-import ProductIcon from './icons/icon_products.svg';
+import { IMenuItem, IPageItem, TopLevelCategory } from '../../@types';
 import { useRouter } from 'next/router';
+import { firstLevelMenu} from '../../helpers';
 
-
-const firstLevelMenu: IFirstLevelMenuItem[] = [
-	{ route: 'courses', name: 'Курсы', icon: <CoursesIcon />, id: TopLevelCategory.Courses },
-	{ route: 'services', name: 'Сервисы', icon: <ServicesIcon />, id: TopLevelCategory.Services },
-	{ route: 'books', name: 'Книги', icon: <BooksIcon />, id: TopLevelCategory.Books },
-	{ route: 'products', name: 'Товары', icon: <ProductIcon />, id: TopLevelCategory.Products },
-];
 
 type OpenSecondLevel = (secondCategory: TopLevelCategory) => void;
 
@@ -43,17 +33,18 @@ function createFirstLevelMenu(secondMenuData: IMenuItem[], categoryActive: TopLe
 	return (
 		<>
 			{firstLevelMenu.map(menu => {
-				const isActive = menu.id === categoryActive;
+				const link = `/${menu.route}`;
+				const isActive = menu.id === categoryActive || link === currentPath;
 
 				const menuItemCls = cn(styles.firstLevelItem, {
 					[styles.firstLevelItemActive]: isActive
 				});
 
-				const secondLevelMenuJSX = isActive && createSecondLevelMenu(secondMenuData, `/${menu.route}`, currentPath, openSecondLevel);
+				const secondLevelMenuJSX = isActive && createSecondLevelMenu(secondMenuData, link, currentPath, openSecondLevel);
 
 				return (
 					<div key={menu.route}>
-						<Link href={`/${menu.route}`}>
+						<Link href={link}>
 							<a>
 								<div className={menuItemCls}>
 									{menu.icon}

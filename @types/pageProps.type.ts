@@ -9,3 +9,5 @@ export interface CourseProps extends HomeProps {
 	page: ITopPageModel;
 	products: IProductModel[];
 }
+
+export interface CoursesProps extends HomeProps {}

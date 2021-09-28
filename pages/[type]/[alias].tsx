@@ -7,7 +7,7 @@ import { CourseProps } from '../../@types';
 import { ParsedUrlQuery } from 'querystring';
 const firstCategory = 0;
 
-function Course({ menu, page, products }: CourseProps): JSX.Element {
+function Course({ products }: CourseProps): JSX.Element {
 	return (
 		<>
 			{products?.length}
