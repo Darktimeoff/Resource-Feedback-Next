@@ -20,6 +20,8 @@ export const getStaticProps: GetStaticProps<HomeProps> = async () => {
   const firstCategory = TopLevelCategory.Courses;
   const menu = await API.findPage(firstCategory);
 
+  if(!menu) return {notFound: true};
+
   return {
     props: {
       menu,

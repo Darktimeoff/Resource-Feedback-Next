@@ -40,16 +40,22 @@ export const getStaticProps: GetStaticProps<CourseProps> = async ({params}: GetS
 	const firstCategoryItem = firstLevelMenu.find(m => m.route === params.type);
 	if (!firstCategoryItem) return { notFound: true };
 
-	const menu = await API.findPage(firstCategoryItem.id);
-	const page = await API.getPageByAlias(params?.alias as string);
-	const products = await API.findProduct(page.category);
+	try {
+		const menu = await API.findPage(firstCategoryItem.id);
 
-	return {
-		props: {
-			menu,
-			firstCategory: firstCategoryItem.id,
-			page,
-			products
-		}
-	};
+		if(!menu.length) return {notFound: true};
+
+		const page = await API.getPageByAlias(params?.alias as string);
+		const products = await API.findProduct(page.category);
+		return {
+			props: {
+				menu,
+				firstCategory: firstCategoryItem.id,
+				page,
+				products
+			}
+		};
+	} catch(e) {
+		return {notFound: true};
+	}
 };
