@@ -1,8 +1,8 @@
-import { IMenuItem, IProductModel, ITopPageModel } from '.';
+import { IMenuItem, IProductModel, ITopPageModel, TopLevelCategory } from '.';
 
 export interface HomeProps extends Record<string, unknown> {
 	menu: IMenuItem[];
-	firstCategory: number;
+	firstCategory: TopLevelCategory;
 }
 
 export interface CourseProps extends HomeProps {
