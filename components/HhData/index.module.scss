@@ -1,0 +1,43 @@
+.hh {
+	display: grid;
+	grid-template-columns: 1fr 3fr;
+	gap: 0 30px;
+	margin-top: 24px;
+}
+.salary {
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	padding: 20px;
+	text-align: center;
+	& > div {
+		border-right: 1px solid var(--gray-light);
+		&:last-child {
+			border-right: none;
+		}
+	}
+}
+
+.count {
+	padding: 20px;
+	text-align: center;
+	display: grid;
+	grid-template-columns: auto;
+	gap: 10px 0;
+}
+
+.title {
+	font-weight: 300;
+	font-size: 20px;
+	line-height: 27px;
+	text-align: center;
+
+	color: var(--black)
+}
+
+.countValue {
+	font-weight: bold;
+	font-size: 36px;
+	line-height: 49px;
+	text-align: center;
+	color: var(--primary);
+}
