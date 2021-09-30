@@ -5,7 +5,7 @@ export interface HomeProps extends Record<string, unknown> {
 	firstCategory: TopLevelCategory;
 }
 
-export interface CourseProps extends HomeProps {
+export interface TopPageProps extends HomeProps {
 	page: ITopPageModel;
 	products: IProductModel[];
 }

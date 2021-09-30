@@ -3,20 +3,17 @@ import { GetStaticPaths, GetStaticProps, GetStaticPropsContext } from 'next';
 import React from 'react';
 import { withLayout } from '../../hoc';
 import { API } from '../../api';
-import { CourseProps, IMenuItem } from '../../@types';
+import { TopPageProps, IMenuItem } from '../../@types';
 import { ParsedUrlQuery } from 'querystring';
 import { firstLevelMenu } from '../../helpers';
+import { TopPageComponent } from '../../page-components';
 
-function Course({ products }: CourseProps): JSX.Element {
-	return (
-		<>
-			{products?.length}
-		</>
-	);
+function TopPage({ products, page, firstCategory}: TopPageProps): JSX.Element {
+	return <TopPageComponent products={products} firstCategory={firstCategory} page={page} />;
 }
 
 
-export default withLayout(Course);
+export default withLayout(TopPage);
 
 export const getStaticPaths: GetStaticPaths = async () => {
 	let paths: string[] = [];
@@ -34,7 +31,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
 	};
 };
 
-export const getStaticProps: GetStaticProps<CourseProps> = async ({params}: GetStaticPropsContext<ParsedUrlQuery>) => {
+export const getStaticProps: GetStaticProps<TopPage> = async ({params}: GetStaticPropsContext<ParsedUrlQuery>) => {
 	if(!params) return {notFound: true};
 
 	const firstCategoryItem = firstLevelMenu.find(m => m.route === params.type);
