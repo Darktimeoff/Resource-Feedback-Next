@@ -1,5 +1,6 @@
 .wrapper {
-	margin-top: 40px;
+	padding-top: 40px;
+	padding-bottom: 49px;
 }
 
 .title {
@@ -18,4 +19,22 @@
 
 	align-items: baseline;
 	justify-items: flex-start;
+}
+.advantages {
+	margin-top: 47px;
+}
+.advantagesSummury {
+	margin-top: 30px;
+}
+.tags {
+	margin-top: 30px;
+}
+.tagsList {
+	margin-top: 22px;
+	div {
+		margin-right: 10px;
+	}
+}
+.seo {
+	margin-top: 30px;
 }

@@ -6,3 +6,5 @@ export * from './Rating';
 export * from './Card';
 export * from './HhData';
 export * from './HhSalaryData';
+export * from './ListItem';
+export * from './AdvantagesList';

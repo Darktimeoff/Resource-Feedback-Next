@@ -3,12 +3,13 @@ import styles from './index.module.scss';
 import { HhSalaryProps } from './props';
 import Star from './icons/star.svg';
 import cn from 'classnames';
+import { priceRu } from '../../helpers';
 
 export const HhSalaryData = ({ starFilled, title, salary, className, ...props }: HhSalaryProps): JSX.Element => {
 	return (
 		<div {...props} className={cn(className, styles.salaryBlock)}>
 			<div className={styles.title}>{title}</div>
-			<div className={styles.salaryValue}>{salary}</div>
+			<div className={styles.salaryValue}>{priceRu(salary)}</div>
 			<div className={styles.stars}>
 				{createStarList(starFilled)}
 			</div>

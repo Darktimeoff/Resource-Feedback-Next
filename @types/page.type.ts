@@ -27,14 +27,14 @@ export interface ITopPageModel {
 	alias: string;
 	title: string;
 	category: string;
-	seoText: string;
+	seoText?: string;
 	tagsTitle: string
 	metaTitle: string;
 	metaDescription: string;
 	firstCategory: TopLevelCategory;
-	advantages: IAdvantage[];
+	advantages?: IAdvantage[];
 	createdAt: Date;
 	updatedAt: Date;
 	__v: number;
-	hh: IHhData;
+	hh?: IHhData;
 }
