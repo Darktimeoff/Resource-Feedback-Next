@@ -1,27 +1,30 @@
 .salaryBlock {
 	display: grid;
 	grid-template-columns: 100%;
+
 	align-items: center;
 	justify-items: center;
-	gap:  10px 0;
+	gap: 10px 0;
 }
+
 .title {
-	font-weight: 300;
 	font-size: 20px;
+	font-weight: 300;
 	line-height: 27px;
 }
+
 .stars {
 	display: grid;
-	grid-template-columns: auto auto auto;
+	grid-template-columns: repeat(3, auto);
 	gap: 0 10px;
 }
+
 .salaryValue {
-	font-weight: bold;
 	font-size: 26px;
+	font-weight: bold;
 	line-height: 35px;
 }
-.filled {
-	circle {
-		fill: var(--red);
-	}
+
+.filled circle {
+	fill: var(--red);
 }
