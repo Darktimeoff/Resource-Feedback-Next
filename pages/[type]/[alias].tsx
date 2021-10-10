@@ -31,7 +31,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
 	};
 };
 
-export const getStaticProps: GetStaticProps<TopPage> = async ({params}: GetStaticPropsContext<ParsedUrlQuery>) => {
+export const getStaticProps: GetStaticProps<TopPageProps> = async ({params}: GetStaticPropsContext<ParsedUrlQuery>) => {
 	if(!params) return {notFound: true};
 
 	const firstCategoryItem = firstLevelMenu.find(m => m.route === params.type);
