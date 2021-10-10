@@ -1,0 +1,19 @@
+.sortIcon {
+	display: none;
+}
+.sort {
+	font-weight: 400;
+	font-size: 16px;
+	display: grid;
+	grid-template-columns: auto auto;
+	gap: 0 43px;
+	justify-items: flex-end;
+	cursor: pointer;
+}
+.active {
+	.sortIcon {
+		display: initial;
+	}
+	color: var(--primary);
+	font-weight: 700;
+}

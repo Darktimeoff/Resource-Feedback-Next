@@ -8,3 +8,4 @@ export * from './HhData';
 export * from './HhSalaryData';
 export * from './ListItem';
 export * from './AdvantagesList';
+export * from './Sort';
