@@ -1,4 +1,4 @@
-import { AdvantagesList, HhData, Htag, Ptag, Sort, Tag } from '../../components';
+import { AdvantagesList, HhData, Htag, Product, Sort, Tag } from '../../components';
 import { TopPageComponentProps } from './props.component';
 import styles from './index.module.scss';
 import { IAdvantage, IProductModel, TopLevelCategory } from '../../@types';
@@ -59,6 +59,6 @@ function createTagsSection(tags: string[]) {
 
 function productList(products: IProductModel[]) {
 	return products.map(p => (
-		<div key={p._id}>{p.title}</div>
+		<Product key={p._id} product={p} />
 	));
 }
