@@ -9,3 +9,5 @@ export * from './HhSalaryData';
 export * from './ListItem';
 export * from './AdvantagesList';
 export * from './Sort';
+export * from './Input';
+export * from './Textarea';

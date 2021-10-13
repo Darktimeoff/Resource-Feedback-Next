@@ -4,11 +4,14 @@ import React from 'react';
 import { withLayout } from '../hoc';
 import { API } from '../api';
 import { HomeProps, TopLevelCategory } from '../@types';
+import { Input, Textarea } from '../components';
 
 function Home(props: HomeProps): JSX.Element {
   return (
     <>
       <div>Index tsx</div>
+	  <Input placeholder="test" />
+	  <Textarea placeholder="test" />
     </>
   );
 }
