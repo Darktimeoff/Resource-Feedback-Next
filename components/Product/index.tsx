@@ -4,12 +4,25 @@ import cn from 'classnames';
 import { Button, Card, Rating, Tag } from '..';
 import { priceRu, declOfNum } from '../../helpers';
 import { IProductCharacteristic} from '../../@types';
+import Image from 'next/image';
 
 export const Product = ({ product, className, ...props }: ProductProps): JSX.Element => {
 	const domain = process.env.NEXT_PUBLIC_DOMAIN;
 	return (
 		<Card {...props} color="white" className={cn(styles.product, className)}>
-			<div className={styles.logo}><img loading="lazy" width="70" height="70" src={`https://${domain}${product.image}`} alt={product.title} /></div>
+			<div className={styles.logo}>
+				<Image 
+					quality={70} 
+					layout="fixed"
+					priority={false} 
+					unoptimized={false} 
+					loading="lazy" 
+					width="70" 
+					height="70"
+					src={`https://${domain}${product.image}`} 
+					alt={product.title} 
+				/>
+			</div>
 			<div className={styles.title}>{product.title}</div>
 			<div className={styles.price}>
 				{priceRu(product.price)}

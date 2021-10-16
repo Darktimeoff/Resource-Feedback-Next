@@ -16,5 +16,8 @@ module.exports = {
     });
 
     return config;
+  },
+  images: {
+    domains: ['courses-top.ru'],
   }
 };
