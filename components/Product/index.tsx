@@ -38,7 +38,7 @@ export const Product = ({ product, className, ...props }: ProductProps): JSX.Ele
 			<div className={styles.priceTitle}>цена</div>
 			<div className={styles.creditTitle}>кредит</div>
 			<div className={styles.ratingTitle}>{product.reviewCount} {declOfNum(product.reviewCount, ['отзыв', 'отзыва', 'отзывов'])}</div>
-			<div className={styles.hr}><hr className={styles.hrStyle}/></div>
+			<div className={cn(styles.hr, styles.hr2)}><hr className={styles.hrStyle}/></div>
 			<div className={styles.description}>{product.description}</div>
 			<div className={styles.feature}>
 				{product.characteristics.map(characteristics)}
