@@ -6,7 +6,7 @@ import { useEffect, useState } from 'react';
 
 export const Rating = ({ rating, isEditable = false, setRating, ...props }: RatingProps): JSX.Element => {
 	const [ratingArray, setRatingArray] = useState<JSX.Element[]>(new Array(5).fill(<></>));
-
+	
 	const constructRating = (currentRating: number) => {
 		const updatedArray = ratingArray.map((_, i) => createStar(i < currentRating, isEditable, i, onStarEnter, onStarClick));
 		setRatingArray(() => updatedArray);

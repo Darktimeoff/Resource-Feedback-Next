@@ -9,6 +9,7 @@ import { firstLevelMenu } from '../../helpers';
 import { TopPageComponent } from '../../page-components';
 
 function TopPage({ products, page, firstCategory}: TopPageProps): JSX.Element {
+	// console.log(`products top page`,products);
 	return <TopPageComponent products={products} firstCategory={firstCategory} page={page} />;
 }
 
@@ -20,10 +21,10 @@ export const getStaticPaths: GetStaticPaths = async () => {
 	const promises: Array<Promise<IMenuItem[]>> = firstLevelMenu.map(mType => API.findPage(mType.id));
 	
 	const menus = await Promise.all(promises);
-	
-	menus.forEach((m, i) => paths = paths.concat(m.flatMap(mAlias => mAlias.pages.map(p => `/${firstLevelMenu[i].route}/${p.alias}`))));
-	
-	console.log(paths);
+	menus.forEach((m, i) => {
+		const tmp = m.map(mAlias => mAlias.pages.map(p => `/${firstLevelMenu[i].route}/${p.alias}`));
+		paths = paths.concat(...tmp)
+	});
 
 	return {
 		paths: paths,
@@ -44,6 +45,7 @@ export const getStaticProps: GetStaticProps<TopPageProps> = async ({params}: Get
 
 		const page = await API.getPageByAlias(params?.alias as string);
 		const products = await API.findProduct(page.category);
+	
 		return {
 			props: {
 				menu,

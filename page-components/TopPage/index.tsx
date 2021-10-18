@@ -12,9 +12,8 @@ export const TopPageComponent = ({products, page, firstCategory}: TopPageCompone
 	const advantages = page.advantages?.length && createAdvantegSection(page.advantages);
 	const tags = page.tags.length && createTagsSection(page.tags);
 	const [{products: sortedProducts, sort}, dispatchSort] = useReducer(sortReducer, {products, sort: SortEnum.Rating});
-
 	const setSort = (sort: SortEnum):void => dispatchSort({type: sort});
-
+	// console.log(`products inside`, products)
 	return (
 		<div className={styles.wrapper}>
 			<div className={styles.title}>
@@ -23,7 +22,7 @@ export const TopPageComponent = ({products, page, firstCategory}: TopPageCompone
 				<Sort sort={sort} setSort={setSort} />
 			</div>
 			<div>
-				{products && productList(sortedProducts)}
+				{products && productList(products)}
 			</div>
 			<div className={styles.hhTitle}>
 				<Htag tag='h2'>Вакансии - {page.category}</Htag>

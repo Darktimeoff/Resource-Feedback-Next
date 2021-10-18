@@ -5,10 +5,18 @@ import { Button, Card, Rating, Tag } from '..';
 import { priceRu, declOfNum } from '../../helpers';
 import { IProductCharacteristic} from '../../@types';
 import Image from 'next/image';
+import { useState } from 'react';
 
 export const Product = ({ product, className, ...props }: ProductProps): JSX.Element => {
+	const [isReviewOpened, setIsReviewOpened] = useState<boolean>(false);
 	const domain = process.env.NEXT_PUBLIC_DOMAIN;
+
+	function onOpenReviewClick() {
+		setIsReviewOpened(!isReviewOpened);
+	}
+
 	return (
+		
 		<Card {...props} color="white" className={cn(styles.product, className)}>
 			<div className={styles.logo}>
 				<Image 
@@ -27,7 +35,7 @@ export const Product = ({ product, className, ...props }: ProductProps): JSX.Ele
 			<div className={styles.price}>
 				{priceRu(product.price)}
 				{product.oldPrice && <Tag color="green" size="s" className={styles.discount}>{priceRu(product.price - product.oldPrice)}</Tag>}
-			 </div>
+			</div>
 			<div className={styles.credit}>
 				{priceRu(product.credit)}/<span className={styles.month}>мес</span>
 			</div>
@@ -60,7 +68,7 @@ export const Product = ({ product, className, ...props }: ProductProps): JSX.Ele
 			<div className={styles.hr}><hr className={styles.hrStyle}/></div>
 			<div className={styles.actions}>
 				<Button className={styles.actionButton} appearance="primary">Узнать подробнее</Button>
-				<Button appearance="ghost" arrow={'right'}>Читать отзывы </Button>
+				<Button appearance="ghost" arrow={'right'} onClick={onOpenReviewClick}>Читать отзывы </Button>
 			</div>
 		</Card>
 	);
