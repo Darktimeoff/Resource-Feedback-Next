@@ -7,6 +7,7 @@ import { useReducer } from 'react';
 import { sortReducer } from './sort.reducer';
 
 export const TopPageComponent = ({products, page, firstCategory}: TopPageComponentProps): JSX.Element => {
+	if(!page) return <></>;
 	const tagJSX = products && <Tag color="grey" size="m">{products.length}</Tag>;
 	const hhDataJSX = firstCategory === TopLevelCategory.Courses && page.hh && <HhData {...page.hh} />;
 	const advantages = page.advantages?.length && createAdvantegSection(page.advantages);
